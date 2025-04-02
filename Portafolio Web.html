@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+
+
+</head>
+<body>
+    <header>
+        <h1>Valentino Olivar</h1>
+        <!-- Botón de Modo Oscuro -->
+        <button id="toggle-mode">🌙 Modo Oscuro</button>
+        <nav>
+            <ul>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#habilidades">Habilidades</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="sobre-mi" style="display: flex; align-items: center;">
+        <img src="https://files.catbox.moe/gt9sw3.png" alt="Mi foto" style="width: 150px; height: auto; border-radius: 10px; margin-right: 20px;">
+        <div>
+            <h2>Sobre mí</h2>
+            <p>Soy estudiante en el Instituto El Obraje, me gusta un poco la programación y me encanta el armado de computadoras.</p>
+        </div>
+    </section>
+    
+    <section id="proyectos">
+        <h2>Proyectos</h2>
+        <div class="proyecto">
+            <h3>Proyecto 1</h3>
+            <p>No tengo Proyectos por el momento, aun pienso en ideas para projectos</p><br>
+            <img src="https://files.catbox.moe/o1y6k9.jpg" alt="Programando">
+        </div>
+    </section>
+    
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Conéctame en mis redes sociales:</p>
+        <div class="redes-sociales">
+            <a href="https://github.com/Valentinoolivar4" target="_blank">
+                <img src="https://files.catbox.moe/01njub.png" alt="GitHub" width="40" height="40">
+            </a>
+            <a href="https://www.linkedin.com/in/valentino-olivar-a42294359/" target="_blank">
+                <img src="https://files.catbox.moe/raa2qi.png" alt="LinkedIn" width="40" height="40">
+            </a>
+        </div>
+    </section>
+    <section id="habilidades">
+        <h2>Habilidades</h2>
+        <div class="habilidad">
+            <span>HTML/CSS</span>
+            <div class="barra">
+                <div class="progress" style="width: 60%;"></div>
+            </div>
+        </div>
+        <div class="habilidad">
+            <span>JavaScript</span>
+            <div class="barra">
+                <div class="progress" style="width: 30%;"></div>
+            </div>
+        </div>
+        <div class="habilidad">
+            <span>Python</span>
+            <div class="barra">
+                <div class="progress" style="width: 40%;"></div>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+        .habilidad {
+            margin: 20px 0;
+            text-align: left;
+        }
+    
+        .habilidad span {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+    
+        .barra {
+            width: 100%;
+            background: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 20px;
+        }
+    
+        .progress {
+            height: 100%;
+            background: var(--primary-color);
+            transition: width 1s ease-in-out;
+        }
+    </style>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleModeBtn = document.getElementById("toggle-mode");
+        
+            // Verificar si el usuario ya tiene una preferencia guardada
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.classList.add("dark-mode");
+                toggleModeBtn.innerText = "☀️ Modo Claro";
+            }
+        
+            toggleModeBtn.addEventListener("click", function () {
+                document.body.classList.toggle("dark-mode");
+        
+                if (document.body.classList.contains("dark-mode")) {
+                    toggleModeBtn.innerText = "☀️ Modo Claro";
+                    localStorage.setItem("theme", "dark");
+                } else {
+                    toggleModeBtn.innerText = "🌙 Modo Oscuro";
+                    localStorage.setItem("theme", "light");
+                }
+            });
+        });
+        </script>
+        
+</body>
+</html>
+
+
+ 
